@@ -1,0 +1,20 @@
+1.	find /var/log  -name  “*.log”  -mtime +15  -size -500MB
+2.	find /path/directory  -type 1 -exec rm {} \
+3.	find /home/user ! -user $(currentowner) 
+4.	find /etc -name “*config” -prem /o=w
+5.	grep /etc/password -v “bash” 
+6.	grep  -r1 –exclude-binary  “specific_String” /path/to/directory
+7.	grep -B 3 -A 3 “error” filename
+8.	grep “^root” /etc/password
+9.	find /home/user -type f ! -name “*.mp4” zgrep
+10.	 tar -xzf archive.tar.gz file.txt
+11.	 tar -rzf archive.tar.gz newfile.txt
+12.	 tar -tzf archive.tar.gz
+13.	 ps aux | grep java | awk '{print $2, $11}' 
+14.	ls -1 /var/log | grep “error”
+15.	grep “failed” filename | wc -1
+16.	tail -n 20 log file.log | grep “critical“
+17.	du -h /home/user/* | sort -h -r
+18.	du -sh --exclude=/var/log /var
+19.	find /path/to/directory -type f -size +100M -exec du -h {} +
+20.	du -h /usr | sort -hr | head -n 10
