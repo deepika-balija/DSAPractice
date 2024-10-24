@@ -5,19 +5,19 @@ public class LongestPalindromeProblem {
 String input = "forgeeksskeegfor";
         System.out.println(findingLongestPalindromeLength(input));
     }
-public static int findingLongestPalindromeLength(String s) {
+public static String findingLongestPalindromeLength(String s) {
         if(s == null || s.length() == 0)
-            return 0;
+            return s;
 
        String lSP ="";
        for(int i=1;i<s.length();i++){
 //for odd length
            int low =i;
            int high =i;
-           while(s.charAt(low)==s.charAt(high)){
+           while(s.charAt(low) == s.charAt(high)){
                low--;
                high++;
-               //terminate the condition if we reachstart /end of string
+               //terminate the condition if we reach start /end of string
                if(low == -1 || high == s.length()){
                    break;
                }
@@ -46,7 +46,7 @@ public static int findingLongestPalindromeLength(String s) {
 
        }
     System.out.println(lSP);
-       return lSP.length();
+       return lSP;
 }
 
 
