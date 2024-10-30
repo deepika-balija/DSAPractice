@@ -16,7 +16,7 @@ static boolean isPowerOfTen(int n) {
         n/=10; // Divide by 10 to check the next digit
     }
 
-    return false;
+    return n==1;
 }
 
 }
