@@ -2,7 +2,7 @@ package com.practice;
 
 public class PowerOfTenProblem {
 public static void main(String[] args) {
-    System.out.println(isPowerOfTen(20));
+    System.out.println(isPowerOfTen(1));
 }
 
 static boolean isPowerOfTen(int n) {
@@ -16,7 +16,7 @@ static boolean isPowerOfTen(int n) {
         n/=10; // Divide by 10 to check the next digit
     }
 
-    return false;
+    return n==1;
 }
 
 }
