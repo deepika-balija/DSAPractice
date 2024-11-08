@@ -14,7 +14,7 @@ public class LongestPalindromeProblem {
 //        int n = s.length() - 1;
         int maxlen = 1;
         int startindex = 0;
-        for (int i = 0; i < s.length()-1 ; i++) {
+        for (int i = 0; i < s.length() ; i++) {
             //for even length
             int low = i;
             int high = i + 1;
@@ -26,9 +26,9 @@ public class LongestPalindromeProblem {
 
 
         }
-        for(int i=1; i< s.length()-1; i++){
-            int low = i-1;
-            int high = i+1;
+        for(int i=1; i< s.length(); i++){
+            int low = i;
+            int high = i;
             int len = expandAround(s, low, high);
             if (len > maxlen) {
                 maxlen = len;
