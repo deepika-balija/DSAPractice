@@ -3,14 +3,19 @@ package com.practice;
 public class FourthProblem {
     
     public static void main(String[] args) {
-   String input="DOWN UP 2xRIGHT DOWN 3xLEFT";
+   //String input="DOWN UP 2xRIGHT DOWN 3xLEFT";
+        String input="UUU";
        findingCoordinates(input);
     }
 
     private static void findingCoordinates(String input) {
         int x=0;
         int y=0;
-        String[] words = input.split(" ");
+        String[] words ={};
+        if(input.contains(" ")){
+          words =  input.split(" ");
+        }else
+            words =input.split("");
         for (String word : words) {
       if(word.equalsIgnoreCase("U") || word.equalsIgnoreCase("UP") ) {
           y+=1;
