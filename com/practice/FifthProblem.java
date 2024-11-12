@@ -37,7 +37,7 @@ public class FifthProblem {
             k++;
         }
         int median=0;
-        for(int res : finalArray) {
+
             int length= finalArray.length;
 
            if(length % 2 == 0) {
@@ -47,7 +47,7 @@ public class FifthProblem {
                median = finalArray[length/2];
            }
 
-        }
+
         System.out.println(median);
     }
 }

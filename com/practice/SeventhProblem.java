@@ -11,7 +11,7 @@ public class SeventhProblem {
 
     }
 
-    private static void startingWithPrefix(String[] arr, String prefix) {
+    private static List<String> startingWithPrefix(String[] arr, String prefix) {
         List<String> list = new ArrayList<String>();
         for(int i = 0; i<arr.length; i++){
             if(arr[i].startsWith(prefix)){
@@ -20,6 +20,7 @@ public class SeventhProblem {
 
         }
         System.out.println(list);
+        return list;
     }
 }
 //"Prefix Search
