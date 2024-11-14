@@ -19,8 +19,10 @@ public class ElectingPresidentProblem {
 
         int index =0;
         while(studentsList.size() > 1){
-           index = (index +k -1) % studentsList.size();
-           studentsList.remove(index);
+           index = (index +k-1 ) % studentsList.size();
+        int r=   studentsList.remove(index);
+            System.out.println(r);
+
         }
         return studentsList.get(0);
     }

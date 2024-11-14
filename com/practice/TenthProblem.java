@@ -2,17 +2,18 @@ package com.practice;
 
 public class TenthProblem {
     public static void main(String[] args) {
-        String str= "-112";
+        String str= "112";
         System.out.println(convertStringtoInteger(str));
     }
 
     private static int convertStringtoInteger(String str) {
 int n=0;
 int k=0;
-if(str.charAt(0)== '-'){
-    k=1;
-}
-for(int i=1;i<str.length();i++){
+
+for(int i=0;i<str.length();i++){
+    if(str.charAt(0)== '-') {
+        k = 1;
+    }
     if(str.charAt(i) >= 0 && str.charAt(i) <= '9'){
         n=(n*10)+(str.charAt(i)-'0');
     }else {
