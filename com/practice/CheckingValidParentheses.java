@@ -2,14 +2,14 @@ package com.practice;
 
 import java.util.Stack;
 
-public class CheckingValidParanthesis {
-    public static void main(String args[]){
+public class CheckingValidParentheses {
+    public static void main(String[] args){
       //  String str= "{()}";
-        String str="{[]}";
-        System.out.println(checkValidParanthesis(str));
+        String str="{[}";
+        System.out.println(checkValidParentheses(str));
     }
 
-    private static boolean checkValidParanthesis(String str) {
+    private static boolean checkValidParentheses(String str) {
         Stack<Character> stack = new Stack<>();
 
         for (char ch : str.toCharArray()) {
@@ -31,7 +31,7 @@ public class CheckingValidParanthesis {
                 }
             }
             }
-            while (stack.size() != 0) {
+            while (!stack.isEmpty()) {
                 if (stack.peek() == '(' || stack.peek() == ')' || stack.peek() == '{' || stack.peek() == '}'
                         || stack.peek() == '[' || stack.peek() == ']') {
                     return false;
@@ -41,7 +41,7 @@ public class CheckingValidParanthesis {
             }
 
 
-            return stack.isEmpty();
+            return true;
 
         }
     }
