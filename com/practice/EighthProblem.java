@@ -15,14 +15,6 @@ public class EighthProblem {
             char ch = str1.charAt(i);
             chaeFreq.put(ch, chaeFreq.getOrDefault(ch, 0) + 1);
         }
-//        for(int i=0; i < str1.length(); i++){
-//            char c=str1.charAt(i);
-//            if(map.get(c)==1){
-//                return c;
-//            }
-//        }
-//        return '0';
-//    }
         for(char ch : chaeFreq.keySet()) {
             if(chaeFreq.get(ch) == 1) {
                 System.out.println(ch);
