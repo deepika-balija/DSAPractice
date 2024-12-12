@@ -1,10 +1,9 @@
-DELETE o FROM orders o
-JOIN (SELECT MIN(orderId) AS orderId, custId, orderDate     FROM orders    
-GROUP BY custId, orderDate     
-HAVING COUNT(*) > 1) AS duplicates ON o.custId = duplicates.custId 
-AND 
-o.orderDate = duplicates.orderDate
-WHERE o.orderId != duplicates.orderId;
+delete from orders
+where order_id not in (
+    select min(order_id)
+    from orders
+    group by cust_id, order_date
+);
 
 
 
