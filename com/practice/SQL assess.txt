@@ -24,9 +24,12 @@ where e.employee_id is null;
 2) Detect Salary gaps
 hint: you want to compare the average salary between departments.
 
-select department_id, avg(salary) as avg_sal from employees
-group by department_id
-order by avg_sal desc;
+selectd.name as department_name,
+       avg(e.salary) as average_salary,
+       max(e.salary) - min(e.salary) as salary_gap
+from employees e
+join departments d on e.department_id = d.id
+group by d.name;
 
 
 
