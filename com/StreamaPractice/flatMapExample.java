@@ -2,6 +2,7 @@ package com.StreamaPractice;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class flatMapExample {
     public static void main(String[] args){
@@ -20,5 +21,20 @@ public class flatMapExample {
                 .flatMap(Collection::stream)  // flatMap(c->c.stream())
                 .toList();           //collect(Collectors.toList())
         System.out.println(list);
+
+//========================================================
+        System.out.println("\n");
+
+        Integer[] array1 = {11, 21, 31};
+        Integer[] array2 = {44, 54, 64};
+
+        System.out.println("Flatten Arrays: "+ flattenArrays(array1, array2));
     }
+
+    private static List<Integer> flattenArrays(Integer[] array1, Integer[] array2) {
+        return Stream.of(array1,array2)
+                .flatMap(Arrays::stream)
+                .collect(Collectors.toList());
+    }
+
 }
