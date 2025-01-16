@@ -12,7 +12,6 @@ public class StringCompress {
 
 	private static String stringCom(String str) {
 		// TODO Auto-generated method stub
-		
 		char arr[] = str.toCharArray();
 		Arrays.sort(arr);
 		int count=1;
