@@ -23,26 +23,24 @@ public class LetterCombOfPhnNum {
 
         List<String> result = new ArrayList<>();
         Queue<String> queue = new ArrayDeque<>();
-        queue.offer(" ");
+        queue.offer("");
 
         for (char str : digits.toCharArray()) {
-            String letters = mplist.get(str);
+            String letters = mplist.get(String.valueOf(str));
             int size = queue.size();
-            if (size != 0) {
+
                 for (int i = 0; i < size; i++) {
-                    String current = queue.poll();
-                    System.out.println(current);
-                    System.out.println(letters);
+                   String current = queue.poll();
+//                    System.out.println(current);
+  //                  System.out.println(letters);
                     for (char c : letters.toCharArray()) {
                         queue.add(current+c);
                     }
-
-
                 }
             }
 
 
-        }
+
         result.addAll(queue);
         return result;
     }
