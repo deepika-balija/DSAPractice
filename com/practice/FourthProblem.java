@@ -26,7 +26,7 @@ public class FourthProblem {
             }else if(word.equalsIgnoreCase("L") || word.equalsIgnoreCase("LEFT") ) {
           x-=1;
             }
-      else if(word.matches("\\d+x[A-Za-z]+")){
+      else if(word.contains("x")){
                 String[] parts = word.split("x");
              int multipliers=Integer.parseInt(parts[0]);
                String direction = parts[1].toUpperCase();

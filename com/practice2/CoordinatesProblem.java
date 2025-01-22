@@ -24,7 +24,7 @@ public class CoordinatesProblem {
             } else if(word.equalsIgnoreCase("L") || word.equalsIgnoreCase("LEFT")){
                 x-=1;
             }
-            else if(word.matches("\\d+x[A-Za-z]+")){
+            else if(word.contains("x")){
 
                 String[] parts= word.split("x");
                 int multipliers = Integer.parseInt(parts[0]);
