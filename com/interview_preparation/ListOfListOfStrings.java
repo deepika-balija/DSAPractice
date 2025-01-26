@@ -1,7 +1,9 @@
 package com.interview_preparation;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class ListOfListOfStrings {
@@ -12,14 +14,21 @@ public class ListOfListOfStrings {
                 List.of("banana", "kiwi")
         );
         Map<String, Long> result = countStringFrequency(listOfList);
-        System.out.println(result);
+        Map<String, Long> result1 = countStringFrequencywithStreams(listOfList);
+        System.out.println(result+" "+ result1);
     }
         public static Map<String, Long> countStringFrequency(List<List<String>> listOfLists){
+        Map<String, Long> mp = new TreeMap<>();
+        for(List<String> innerList : listOfLists){
+            for(String item : innerList){
+                mp.put(item, mp.getOrDefault(item,0L)+1);
+            }
+        }
+        return mp;
+    }
+    public static Map<String, Long> countStringFrequencywithStreams(List<List<String>> listOfLists){
         return listOfLists.stream()
-                .flatMap(List::stream) // Flatten the list of lists into a single stream of strings
-                .collect(Collectors.groupingBy(
-                        str -> str, // Group by the string itself
-                        Collectors.counting() // Count occurrences of each string
-                ));
+                .flatMap(List :: stream)
+                .collect(Collectors.groupingBy(str -> str, Collectors.counting()));
     }
 }
