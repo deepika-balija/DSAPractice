@@ -19,7 +19,12 @@ public class NonRepeatedCharacters {
         Map<Character, Integer> mp = new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
-            mp.put(c, mp.getOrDefault(c, 0) + 1);
+//            mp.put(c, mp.getOrDefault(c, 0) + 1);
+            if(mp.containsKey(c)){
+                mp.put(c, mp.get(c)+1);
+            }else {
+                mp.put(c,1);
+            }
         }
 
         for(char c : input.toCharArray())

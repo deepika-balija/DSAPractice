@@ -34,7 +34,7 @@ public class KillProcess {
            int current = queue.poll();
            resultList.add(current);
            if(mp.containsKey(current)){
-               resultList.addAll(mp.get(current));
+               queue.addAll(mp.get(current));
            }
 
         }
